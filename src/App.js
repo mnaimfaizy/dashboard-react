@@ -8,11 +8,19 @@ import { ECommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Ka
 
 import './App.css';
 
+import { useStateContext } from './contexts/ContextProvider';
+
 const App = () => {
-  const activeMenu = false;
-  const currentMode = 'Light';
-  const currentColor = '#FFA500';
-  const [themeSettings, setThemeSettings] = React.useState(false);
+  const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
+
+  useEffect(() => {
+    const currentThemeColor = localStorage.getItem('colorMode');
+    const currentThemeMode = localStorage.getItem('themeMode');
+    if (currentThemeColor && currentThemeMode) {
+      setCurrentColor(currentThemeColor);
+      setCurrentMode(currentThemeMode);
+    }
+  }, []);
 
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
