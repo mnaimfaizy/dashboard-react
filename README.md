@@ -558,7 +558,7 @@ Configured for JIT (Just-In-Time) mode with dark mode support. See `tailwind.con
 
 ## 📝 License
 
-This project is bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🤝 Contributing
 
